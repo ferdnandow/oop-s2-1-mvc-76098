@@ -17,10 +17,10 @@ public static class SeedData
             await roleManager.CreateAsync(new IdentityRole("Admin"));
 
         // Seed Admin user
-        if (await userManager.FindByEmailAsync("admin@library.com") == null)
+        if (await userManager.FindByEmailAsync("assignment@dorset.ie") == null)
         {
-            var admin = new IdentityUser { UserName = "admin@library.com", Email = "admin@library.com" };
-            await userManager.CreateAsync(admin, "Admin123!");
+            var admin = new IdentityUser { UserName = "assignment@dorset.ie", Email = "assignment@dorset.ie" };
+            await userManager.CreateAsync(admin, "Dorset123!");
             await userManager.AddToRoleAsync(admin, "Admin");
         }
 

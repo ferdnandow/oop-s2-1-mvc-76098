@@ -47,6 +47,8 @@ public class LoansController : Controller
             return View(loan);
         }
 
+        ModelState.Remove("Book");
+        ModelState.Remove("Member");
         if (ModelState.IsValid)
         {
             loan.LoanDate = DateTime.Now;
