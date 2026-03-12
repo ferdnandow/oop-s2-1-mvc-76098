@@ -1,0 +1,25 @@
+@model Library.Domain.Loan
+@{ ViewData["Title"] = "New Loan"; }
+
+<h2>New Loan</h2>
+<form asp-action="Create">
+    <div asp-validation-summary="All" class="text-danger"></div>
+    <div class="mb-3">
+        <label asp-for="MemberId" class="form-label">Member</label>
+        <select asp-for="MemberId" asp-items="ViewBag.Members" class="form-select">
+            <option value="">-- Select Member --</option>
+        </select>
+    </div>
+    <div class="mb-3">
+        <label asp-for="BookId" class="form-label">Book</label>
+        <select asp-for="BookId" asp-items="ViewBag.Books" class="form-select">
+            <option value="">-- Select Book --</option>
+        </select>
+    </div>
+    <div class="mb-3">
+        <label asp-for="DueDate" class="form-label">Due Date</label>
+        <input asp-for="DueDate" class="form-control" type="date" />
+    </div>
+    <button type="submit" class="btn btn-primary">Create Loan</button>
+    <a asp-action="Index" class="btn btn-secondary">Cancel</a>
+</form>
